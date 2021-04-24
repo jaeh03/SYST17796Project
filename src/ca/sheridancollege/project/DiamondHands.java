@@ -76,7 +76,7 @@ public class DiamondHands extends Game {
         String start;
         System.out.println("---------ENTER START TO PLAY---------");
         start = in.nextLine();
-        if (start.equalsIgnoreCase(start)) {
+        if (start.equalsIgnoreCase("start")) {
             game.play(d, one);
         } else {
             System.out.println("---Maybe Another Time---");
