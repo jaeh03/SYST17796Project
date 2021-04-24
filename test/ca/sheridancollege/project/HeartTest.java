@@ -13,47 +13,43 @@ import static org.junit.Assert.*;
  *
  * @author Domenic
  */
-public class ClubTest {
+public class HeartTest {
     
-    public ClubTest() {
+    public HeartTest() {
     }
     
 
     /**
-     * Test of toString method, of class Club.
+     * Test of toString method, of class Heart.
      */
-    //Good Test
+    //good test
     @Test
     public void testToStringGood() {
-        System.out.println("toString Good Test");
-        Club instance = new Club(3,"Three");
-        //expected result for the test
-        String expResult = "Three of Clubs";
+        System.out.println("Heart toString- Good");
+        Heart instance = new Heart (7,"Seven");
+        String expResult = "Seven of Hearts";
         String result = instance.toString();
-        //check if the test has passed
-        assertEquals(expResult, result);
-    }
-    //Bad Test
-    @Test
-    public void testToStringBad() {
-        System.out.println("toString Bad Test");
-        Club instance = new Club(0,"");
-        //expected result for the test
-        String expResult = " of Clubs";
-        String result = instance.toString();
-        //check if the test has passed
         assertEquals(expResult, result);
     }
     
-    //boundry Test
+    //bad Test
     @Test
-    public void testToStringBoundry() {
-        System.out.println("toString Boundry Test");
-        Club instance = new Club(10,"Ten");
-        //expected result for the test
-        String expResult = "Ten of Clubs";
+    public void testToStringBad() {
+        System.out.println("Heart toString- Bad");
+        Heart instance = new Heart (0,"");
+        String expResult = " of Hearts";
         String result = instance.toString();
-        //check if the test has passed
         assertEquals(expResult, result);
     }
+    
+    //boundry test
+    @Test
+    public void testToStringBoundry() {
+        System.out.println("Heart toString- Boundry");
+        Heart instance = new Heart (10,"Ten");
+        String expResult = "Ten of Hearts";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+    }
+    
 }
