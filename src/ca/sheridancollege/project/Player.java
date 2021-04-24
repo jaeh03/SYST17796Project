@@ -1,49 +1,55 @@
-/**Ruvon
- * SYST 17796 Project Base code.
- * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+/*
+ * Ruvon
  */
 package ca.sheridancollege.project;
 
-/**
- * A class that models each Player in the game. Players have an identifier, which should be unique.
- *
- * @author dancye
- * @author Paul Bonenfant Jan 2020
- */
-public abstract class Player {
+import java.util.ArrayList;
 
-    private String name; //the unique name for this player
+public class Player {
 
-    /**
-     * A constructor that allows you to set the player's unique ID
-     *
-     * @param name the unique ID to assign to this player.
-     */
+    //THE CARDS PLAYER HAS IN PLAY
+    public ArrayList<Card> hand = new ArrayList<>();
+
+    //THE TOTAL CARD VALUE OF THEIR HAND 
+    private int handValue;
+
+    //the unique name for this player
+    private String name;
+
+    //SETTER FOR NAME
     public Player(String name) {
-        this.name = name;
+        this.setName(name);
     }
 
-    /**
-     * @return the player name
-     */
+    //CONSTRUCTOR
+    public Player() {
+    }
+
+    //GETTER
     public String getName() {
         return name;
     }
 
-    /**
-     * Ensure that the playerID is unique
-     *
-     * @param name the player name to set
-     */
+    //SETTER
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
-     * with logic to play your game.
+    //WILL RETURN THE NAME AND SUITE OF EACH CARD IN HAND
+    public ArrayList<Card> getCards() {
+        return this.hand;
+
+    }
+
+    /* This method will iterate through each card and find the total 
+     * value of the PLAYER's hand
      */
-    public abstract void play();
+    public int getHandValue() {
+        this.handValue = 0;
+        for (Card a : hand) {
+            this.handValue += a.getValue();
+        }
+        return this.handValue;
+    }
 
 }
