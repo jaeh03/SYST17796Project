@@ -31,6 +31,7 @@ public class DiamondHands extends Game {
         System.out.println("\nWould you like another Card? \n");
         System.out.println("Enter 'Y' for yes OR 'N' for no");
         String hitChoice = in.nextLine();
+
         while (hitChoice.equalsIgnoreCase("y")) {
             d.dealOne(a.hand);
             System.out.println("Your current hand is : " + a.hand);
@@ -40,6 +41,10 @@ public class DiamondHands extends Game {
                 System.out.println("Sorry you've gone bust and lost");
                 hitChoice = "n";
 
+            } else {
+                System.out.println("\nWould you like another Card? \n");
+                System.out.println("Enter 'Y' for yes OR 'N' for no");
+                hitChoice = in.nextLine();
             }
         }
         System.out.println("\nLets find the Winner then!");
